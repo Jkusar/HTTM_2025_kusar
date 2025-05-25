@@ -1,0 +1,368 @@
+station id, station name, valid,povp. dnevna T [°C]
+_1895,Ljubljana Bežigrad,2024-01-01,5.8
+_1895,Ljubljana Bežigrad,2024-01-02,5.1
+_1895,Ljubljana Bežigrad,2024-01-03,9.1
+_1895,Ljubljana Bežigrad,2024-01-04,6.8
+_1895,Ljubljana Bežigrad,2024-01-05,5.1
+_1895,Ljubljana Bežigrad,2024-01-06,6.7
+_1895,Ljubljana Bežigrad,2024-01-07,4.2
+_1895,Ljubljana Bežigrad,2024-01-08,-0.6
+_1895,Ljubljana Bežigrad,2024-01-09,-1.7
+_1895,Ljubljana Bežigrad,2024-01-10,-1.9
+_1895,Ljubljana Bežigrad,2024-01-11,-3
+_1895,Ljubljana Bežigrad,2024-01-12,-1.1
+_1895,Ljubljana Bežigrad,2024-01-13,-1.3
+_1895,Ljubljana Bežigrad,2024-01-14,1.8
+_1895,Ljubljana Bežigrad,2024-01-15,3.8
+_1895,Ljubljana Bežigrad,2024-01-16,1.1
+_1895,Ljubljana Bežigrad,2024-01-17,3.1
+_1895,Ljubljana Bežigrad,2024-01-18,9.3
+_1895,Ljubljana Bežigrad,2024-01-19,-1
+_1895,Ljubljana Bežigrad,2024-01-20,-5.5
+_1895,Ljubljana Bežigrad,2024-01-21,-5.7
+_1895,Ljubljana Bežigrad,2024-01-22,-4.6
+_1895,Ljubljana Bežigrad,2024-01-23,-0.5
+_1895,Ljubljana Bežigrad,2024-01-24,3.6
+_1895,Ljubljana Bežigrad,2024-01-25,3.6
+_1895,Ljubljana Bežigrad,2024-01-26,3.5
+_1895,Ljubljana Bežigrad,2024-01-27,2.3
+_1895,Ljubljana Bežigrad,2024-01-28,0.3
+_1895,Ljubljana Bežigrad,2024-01-29,0.1
+_1895,Ljubljana Bežigrad,2024-01-30,-0.4
+_1895,Ljubljana Bežigrad,2024-01-31,1.1
+_1895,Ljubljana Bežigrad,2024-02-01,1
+_1895,Ljubljana Bežigrad,2024-02-02,3.2
+_1895,Ljubljana Bežigrad,2024-02-03,2.4
+_1895,Ljubljana Bežigrad,2024-02-04,6.9
+_1895,Ljubljana Bežigrad,2024-02-05,8.5
+_1895,Ljubljana Bežigrad,2024-02-06,8.7
+_1895,Ljubljana Bežigrad,2024-02-07,9.4
+_1895,Ljubljana Bežigrad,2024-02-08,10.2
+_1895,Ljubljana Bežigrad,2024-02-09,11
+_1895,Ljubljana Bežigrad,2024-02-10,10.1
+_1895,Ljubljana Bežigrad,2024-02-11,9.3
+_1895,Ljubljana Bežigrad,2024-02-12,8.9
+_1895,Ljubljana Bežigrad,2024-02-13,7.8
+_1895,Ljubljana Bežigrad,2024-02-14,5.3
+_1895,Ljubljana Bežigrad,2024-02-15,6.1
+_1895,Ljubljana Bežigrad,2024-02-16,7.2
+_1895,Ljubljana Bežigrad,2024-02-17,9.1
+_1895,Ljubljana Bežigrad,2024-02-18,8.2
+_1895,Ljubljana Bežigrad,2024-02-19,6.5
+_1895,Ljubljana Bežigrad,2024-02-20,8.4
+_1895,Ljubljana Bežigrad,2024-02-21,8
+_1895,Ljubljana Bežigrad,2024-02-22,9.1
+_1895,Ljubljana Bežigrad,2024-02-23,8.8
+_1895,Ljubljana Bežigrad,2024-02-24,8.4
+_1895,Ljubljana Bežigrad,2024-02-25,7.2
+_1895,Ljubljana Bežigrad,2024-02-26,6
+_1895,Ljubljana Bežigrad,2024-02-27,7.3
+_1895,Ljubljana Bežigrad,2024-02-28,9.6
+_1895,Ljubljana Bežigrad,2024-02-29,9.1
+_1895,Ljubljana Bežigrad,2024-03-01,9
+_1895,Ljubljana Bežigrad,2024-03-02,9.8
+_1895,Ljubljana Bežigrad,2024-03-03,9.9
+_1895,Ljubljana Bežigrad,2024-03-04,9.6
+_1895,Ljubljana Bežigrad,2024-03-05,10
+_1895,Ljubljana Bežigrad,2024-03-06,7.9
+_1895,Ljubljana Bežigrad,2024-03-07,6.4
+_1895,Ljubljana Bežigrad,2024-03-08,4.3
+_1895,Ljubljana Bežigrad,2024-03-09,5.8
+_1895,Ljubljana Bežigrad,2024-03-10,7.3
+_1895,Ljubljana Bežigrad,2024-03-11,7.6
+_1895,Ljubljana Bežigrad,2024-03-12,10.9
+_1895,Ljubljana Bežigrad,2024-03-13,9.7
+_1895,Ljubljana Bežigrad,2024-03-14,10.9
+_1895,Ljubljana Bežigrad,2024-03-15,11.2
+_1895,Ljubljana Bežigrad,2024-03-16,10.9
+_1895,Ljubljana Bežigrad,2024-03-17,12
+_1895,Ljubljana Bežigrad,2024-03-18,11.2
+_1895,Ljubljana Bežigrad,2024-03-19,7.3
+_1895,Ljubljana Bežigrad,2024-03-20,10.2
+_1895,Ljubljana Bežigrad,2024-03-21,11.1
+_1895,Ljubljana Bežigrad,2024-03-22,13.9
+_1895,Ljubljana Bežigrad,2024-03-23,8.5
+_1895,Ljubljana Bežigrad,2024-03-24,6.2
+_1895,Ljubljana Bežigrad,2024-03-25,7.8
+_1895,Ljubljana Bežigrad,2024-03-26,8.6
+_1895,Ljubljana Bežigrad,2024-03-27,10.4
+_1895,Ljubljana Bežigrad,2024-03-28,8.1
+_1895,Ljubljana Bežigrad,2024-03-29,13.8
+_1895,Ljubljana Bežigrad,2024-03-30,14.9
+_1895,Ljubljana Bežigrad,2024-03-31,14
+_1895,Ljubljana Bežigrad,2024-04-01,13.2
+_1895,Ljubljana Bežigrad,2024-04-02,12.2
+_1895,Ljubljana Bežigrad,2024-04-03,10.8
+_1895,Ljubljana Bežigrad,2024-04-04,13.5
+_1895,Ljubljana Bežigrad,2024-04-05,14.6
+_1895,Ljubljana Bežigrad,2024-04-06,16.2
+_1895,Ljubljana Bežigrad,2024-04-07,18.3
+_1895,Ljubljana Bežigrad,2024-04-08,19.2
+_1895,Ljubljana Bežigrad,2024-04-09,19.4
+_1895,Ljubljana Bežigrad,2024-04-10,14.3
+_1895,Ljubljana Bežigrad,2024-04-11,15
+_1895,Ljubljana Bežigrad,2024-04-12,16.6
+_1895,Ljubljana Bežigrad,2024-04-13,19.3
+_1895,Ljubljana Bežigrad,2024-04-14,20.8
+_1895,Ljubljana Bežigrad,2024-04-15,19.7
+_1895,Ljubljana Bežigrad,2024-04-16,5.4
+_1895,Ljubljana Bežigrad,2024-04-17,7
+_1895,Ljubljana Bežigrad,2024-04-18,7.2
+_1895,Ljubljana Bežigrad,2024-04-19,8.6
+_1895,Ljubljana Bežigrad,2024-04-20,6.9
+_1895,Ljubljana Bežigrad,2024-04-21,7.2
+_1895,Ljubljana Bežigrad,2024-04-22,6.2
+_1895,Ljubljana Bežigrad,2024-04-23,4
+_1895,Ljubljana Bežigrad,2024-04-24,6.3
+_1895,Ljubljana Bežigrad,2024-04-25,6
+_1895,Ljubljana Bežigrad,2024-04-26,9.9
+_1895,Ljubljana Bežigrad,2024-04-27,11.3
+_1895,Ljubljana Bežigrad,2024-04-28,14.9
+_1895,Ljubljana Bežigrad,2024-04-29,18.2
+_1895,Ljubljana Bežigrad,2024-04-30,18.2
+_1895,Ljubljana Bežigrad,2024-05-01,15.7
+_1895,Ljubljana Bežigrad,2024-05-02,13.7
+_1895,Ljubljana Bežigrad,2024-05-03,11.5
+_1895,Ljubljana Bežigrad,2024-05-04,15.7
+_1895,Ljubljana Bežigrad,2024-05-05,15.4
+_1895,Ljubljana Bežigrad,2024-05-06,15.9
+_1895,Ljubljana Bežigrad,2024-05-07,14.4
+_1895,Ljubljana Bežigrad,2024-05-08,15.1
+_1895,Ljubljana Bežigrad,2024-05-09,16.1
+_1895,Ljubljana Bežigrad,2024-05-10,16.7
+_1895,Ljubljana Bežigrad,2024-05-11,17.6
+_1895,Ljubljana Bežigrad,2024-05-12,17.9
+_1895,Ljubljana Bežigrad,2024-05-13,15.6
+_1895,Ljubljana Bežigrad,2024-05-14,14.8
+_1895,Ljubljana Bežigrad,2024-05-15,16.4
+_1895,Ljubljana Bežigrad,2024-05-16,15.7
+_1895,Ljubljana Bežigrad,2024-05-17,15.9
+_1895,Ljubljana Bežigrad,2024-05-18,17.6
+_1895,Ljubljana Bežigrad,2024-05-19,19.1
+_1895,Ljubljana Bežigrad,2024-05-20,19.5
+_1895,Ljubljana Bežigrad,2024-05-21,16
+_1895,Ljubljana Bežigrad,2024-05-22,16.1
+_1895,Ljubljana Bežigrad,2024-05-23,16
+_1895,Ljubljana Bežigrad,2024-05-24,17.4
+_1895,Ljubljana Bežigrad,2024-05-25,16
+_1895,Ljubljana Bežigrad,2024-05-26,17.1
+_1895,Ljubljana Bežigrad,2024-05-27,17.8
+_1895,Ljubljana Bežigrad,2024-05-28,16.7
+_1895,Ljubljana Bežigrad,2024-05-29,18
+_1895,Ljubljana Bežigrad,2024-05-30,16
+_1895,Ljubljana Bežigrad,2024-05-31,13.9
+_1895,Ljubljana Bežigrad,2024-06-01,16.1
+_1895,Ljubljana Bežigrad,2024-06-02,18
+_1895,Ljubljana Bežigrad,2024-06-03,17
+_1895,Ljubljana Bežigrad,2024-06-04,17.9
+_1895,Ljubljana Bežigrad,2024-06-05,20.3
+_1895,Ljubljana Bežigrad,2024-06-06,22.5
+_1895,Ljubljana Bežigrad,2024-06-07,22.9
+_1895,Ljubljana Bežigrad,2024-06-08,24.1
+_1895,Ljubljana Bežigrad,2024-06-09,24.1
+_1895,Ljubljana Bežigrad,2024-06-10,21.2
+_1895,Ljubljana Bežigrad,2024-06-11,15.3
+_1895,Ljubljana Bežigrad,2024-06-12,13.8
+_1895,Ljubljana Bežigrad,2024-06-13,12.8
+_1895,Ljubljana Bežigrad,2024-06-14,17.1
+_1895,Ljubljana Bežigrad,2024-06-15,19.7
+_1895,Ljubljana Bežigrad,2024-06-16,21.4
+_1895,Ljubljana Bežigrad,2024-06-17,22.7
+_1895,Ljubljana Bežigrad,2024-06-18,24
+_1895,Ljubljana Bežigrad,2024-06-19,26.3
+_1895,Ljubljana Bežigrad,2024-06-20,25.2
+_1895,Ljubljana Bežigrad,2024-06-21,25
+_1895,Ljubljana Bežigrad,2024-06-22,23.7
+_1895,Ljubljana Bežigrad,2024-06-23,23.5
+_1895,Ljubljana Bežigrad,2024-06-24,21.7
+_1895,Ljubljana Bežigrad,2024-06-25,20.6
+_1895,Ljubljana Bežigrad,2024-06-26,19.6
+_1895,Ljubljana Bežigrad,2024-06-27,22.6
+_1895,Ljubljana Bežigrad,2024-06-28,25.3
+_1895,Ljubljana Bežigrad,2024-06-29,26.9
+_1895,Ljubljana Bežigrad,2024-06-30,25.5
+_1895,Ljubljana Bežigrad,2024-07-01,19.1
+_1895,Ljubljana Bežigrad,2024-07-02,20.7
+_1895,Ljubljana Bežigrad,2024-07-03,19.8
+_1895,Ljubljana Bežigrad,2024-07-04,20.1
+_1895,Ljubljana Bežigrad,2024-07-05,22.9
+_1895,Ljubljana Bežigrad,2024-07-06,24
+_1895,Ljubljana Bežigrad,2024-07-07,22.1
+_1895,Ljubljana Bežigrad,2024-07-08,25.4
+_1895,Ljubljana Bežigrad,2024-07-09,27.5
+_1895,Ljubljana Bežigrad,2024-07-10,27.8
+_1895,Ljubljana Bežigrad,2024-07-11,28.2
+_1895,Ljubljana Bežigrad,2024-07-12,25.9
+_1895,Ljubljana Bežigrad,2024-07-13,25.6
+_1895,Ljubljana Bežigrad,2024-07-14,26.5
+_1895,Ljubljana Bežigrad,2024-07-15,26.3
+_1895,Ljubljana Bežigrad,2024-07-16,27.6
+_1895,Ljubljana Bežigrad,2024-07-17,27.5
+_1895,Ljubljana Bežigrad,2024-07-18,26.9
+_1895,Ljubljana Bežigrad,2024-07-19,27.9
+_1895,Ljubljana Bežigrad,2024-07-20,20.4
+_1895,Ljubljana Bežigrad,2024-07-21,24.7
+_1895,Ljubljana Bežigrad,2024-07-22,23.6
+_1895,Ljubljana Bežigrad,2024-07-23,22.8
+_1895,Ljubljana Bežigrad,2024-07-24,22.4
+_1895,Ljubljana Bežigrad,2024-07-25,22.7
+_1895,Ljubljana Bežigrad,2024-07-26,25.1
+_1895,Ljubljana Bežigrad,2024-07-27,26.5
+_1895,Ljubljana Bežigrad,2024-07-28,24.1
+_1895,Ljubljana Bežigrad,2024-07-29,22.9
+_1895,Ljubljana Bežigrad,2024-07-30,23.7
+_1895,Ljubljana Bežigrad,2024-07-31,25.5
+_1895,Ljubljana Bežigrad,2024-08-01,23.2
+_1895,Ljubljana Bežigrad,2024-08-02,22.7
+_1895,Ljubljana Bežigrad,2024-08-03,22.5
+_1895,Ljubljana Bežigrad,2024-08-04,22.5
+_1895,Ljubljana Bežigrad,2024-08-05,24
+_1895,Ljubljana Bežigrad,2024-08-06,23.5
+_1895,Ljubljana Bežigrad,2024-08-07,22.4
+_1895,Ljubljana Bežigrad,2024-08-08,22.9
+_1895,Ljubljana Bežigrad,2024-08-09,24.1
+_1895,Ljubljana Bežigrad,2024-08-10,26.5
+_1895,Ljubljana Bežigrad,2024-08-11,27.5
+_1895,Ljubljana Bežigrad,2024-08-12,28.5
+_1895,Ljubljana Bežigrad,2024-08-13,26.9
+_1895,Ljubljana Bežigrad,2024-08-14,25
+_1895,Ljubljana Bežigrad,2024-08-15,26.5
+_1895,Ljubljana Bežigrad,2024-08-16,27.3
+_1895,Ljubljana Bežigrad,2024-08-17,24.1
+_1895,Ljubljana Bežigrad,2024-08-18,21.8
+_1895,Ljubljana Bežigrad,2024-08-19,23.2
+_1895,Ljubljana Bežigrad,2024-08-20,23.6
+_1895,Ljubljana Bežigrad,2024-08-21,23.1
+_1895,Ljubljana Bežigrad,2024-08-22,22.2
+_1895,Ljubljana Bežigrad,2024-08-23,24.8
+_1895,Ljubljana Bežigrad,2024-08-24,25.8
+_1895,Ljubljana Bežigrad,2024-08-25,26
+_1895,Ljubljana Bežigrad,2024-08-26,24.6
+_1895,Ljubljana Bežigrad,2024-08-27,22.9
+_1895,Ljubljana Bežigrad,2024-08-28,24
+_1895,Ljubljana Bežigrad,2024-08-29,24.8
+_1895,Ljubljana Bežigrad,2024-08-30,25.4
+_1895,Ljubljana Bežigrad,2024-08-31,25
+_1895,Ljubljana Bežigrad,2024-09-01,24.8
+_1895,Ljubljana Bežigrad,2024-09-02,23.5
+_1895,Ljubljana Bežigrad,2024-09-03,23.1
+_1895,Ljubljana Bežigrad,2024-09-04,22.1
+_1895,Ljubljana Bežigrad,2024-09-05,20.3
+_1895,Ljubljana Bežigrad,2024-09-06,18.9
+_1895,Ljubljana Bežigrad,2024-09-07,22.2
+_1895,Ljubljana Bežigrad,2024-09-08,21
+_1895,Ljubljana Bežigrad,2024-09-09,17.3
+_1895,Ljubljana Bežigrad,2024-09-10,18.8
+_1895,Ljubljana Bežigrad,2024-09-11,18.9
+_1895,Ljubljana Bežigrad,2024-09-12,11.4
+_1895,Ljubljana Bežigrad,2024-09-13,10.4
+_1895,Ljubljana Bežigrad,2024-09-14,11.7
+_1895,Ljubljana Bežigrad,2024-09-15,15.4
+_1895,Ljubljana Bežigrad,2024-09-16,12.5
+_1895,Ljubljana Bežigrad,2024-09-17,11.9
+_1895,Ljubljana Bežigrad,2024-09-18,15.2
+_1895,Ljubljana Bežigrad,2024-09-19,17.3
+_1895,Ljubljana Bežigrad,2024-09-20,17
+_1895,Ljubljana Bežigrad,2024-09-21,16.1
+_1895,Ljubljana Bežigrad,2024-09-22,16
+_1895,Ljubljana Bežigrad,2024-09-23,17.9
+_1895,Ljubljana Bežigrad,2024-09-24,17.9
+_1895,Ljubljana Bežigrad,2024-09-25,17.5
+_1895,Ljubljana Bežigrad,2024-09-26,19.6
+_1895,Ljubljana Bežigrad,2024-09-27,21.3
+_1895,Ljubljana Bežigrad,2024-09-28,13.5
+_1895,Ljubljana Bežigrad,2024-09-29,12
+_1895,Ljubljana Bežigrad,2024-09-30,10.9
+_1895,Ljubljana Bežigrad,2024-10-01,14.3
+_1895,Ljubljana Bežigrad,2024-10-02,13.5
+_1895,Ljubljana Bežigrad,2024-10-03,9.8
+_1895,Ljubljana Bežigrad,2024-10-04,9.9
+_1895,Ljubljana Bežigrad,2024-10-05,11.1
+_1895,Ljubljana Bežigrad,2024-10-06,11.5
+_1895,Ljubljana Bežigrad,2024-10-07,13.4
+_1895,Ljubljana Bežigrad,2024-10-08,16.4
+_1895,Ljubljana Bežigrad,2024-10-09,17.8
+_1895,Ljubljana Bežigrad,2024-10-10,15.2
+_1895,Ljubljana Bežigrad,2024-10-11,14.6
+_1895,Ljubljana Bežigrad,2024-10-12,11.9
+_1895,Ljubljana Bežigrad,2024-10-13,13
+_1895,Ljubljana Bežigrad,2024-10-14,10.9
+_1895,Ljubljana Bežigrad,2024-10-15,15
+_1895,Ljubljana Bežigrad,2024-10-16,12.5
+_1895,Ljubljana Bežigrad,2024-10-17,11.7
+_1895,Ljubljana Bežigrad,2024-10-18,12.1
+_1895,Ljubljana Bežigrad,2024-10-19,12.7
+_1895,Ljubljana Bežigrad,2024-10-20,11.7
+_1895,Ljubljana Bežigrad,2024-10-21,11.7
+_1895,Ljubljana Bežigrad,2024-10-22,14.9
+_1895,Ljubljana Bežigrad,2024-10-23,14.2
+_1895,Ljubljana Bežigrad,2024-10-24,12.8
+_1895,Ljubljana Bežigrad,2024-10-25,13.5
+_1895,Ljubljana Bežigrad,2024-10-26,15.1
+_1895,Ljubljana Bežigrad,2024-10-27,15.3
+_1895,Ljubljana Bežigrad,2024-10-28,14.5
+_1895,Ljubljana Bežigrad,2024-10-29,14.2
+_1895,Ljubljana Bežigrad,2024-10-30,12.6
+_1895,Ljubljana Bežigrad,2024-10-31,12
+_1895,Ljubljana Bežigrad,2024-11-01,10.8
+_1895,Ljubljana Bežigrad,2024-11-02,10.6
+_1895,Ljubljana Bežigrad,2024-11-03,8.4
+_1895,Ljubljana Bežigrad,2024-11-04,5.3
+_1895,Ljubljana Bežigrad,2024-11-05,5.7
+_1895,Ljubljana Bežigrad,2024-11-06,4.8
+_1895,Ljubljana Bežigrad,2024-11-07,4.4
+_1895,Ljubljana Bežigrad,2024-11-08,4.1
+_1895,Ljubljana Bežigrad,2024-11-09,3.9
+_1895,Ljubljana Bežigrad,2024-11-10,3.4
+_1895,Ljubljana Bežigrad,2024-11-11,4.3
+_1895,Ljubljana Bežigrad,2024-11-12,3.8
+_1895,Ljubljana Bežigrad,2024-11-13,3.1
+_1895,Ljubljana Bežigrad,2024-11-14,3.1
+_1895,Ljubljana Bežigrad,2024-11-15,2.3
+_1895,Ljubljana Bežigrad,2024-11-16,3
+_1895,Ljubljana Bežigrad,2024-11-17,4.3
+_1895,Ljubljana Bežigrad,2024-11-18,6.7
+_1895,Ljubljana Bežigrad,2024-11-19,9.3
+_1895,Ljubljana Bežigrad,2024-11-20,6.7
+_1895,Ljubljana Bežigrad,2024-11-21,2.2
+_1895,Ljubljana Bežigrad,2024-11-22,0.5
+_1895,Ljubljana Bežigrad,2024-11-23,0.6
+_1895,Ljubljana Bežigrad,2024-11-24,5
+_1895,Ljubljana Bežigrad,2024-11-25,7.2
+_1895,Ljubljana Bežigrad,2024-11-26,10.3
+_1895,Ljubljana Bežigrad,2024-11-27,8.4
+_1895,Ljubljana Bežigrad,2024-11-28,8.7
+_1895,Ljubljana Bežigrad,2024-11-29,5.8
+_1895,Ljubljana Bežigrad,2024-11-30,5
+_1895,Ljubljana Bežigrad,2024-12-01,3.1
+_1895,Ljubljana Bežigrad,2024-12-02,3
+_1895,Ljubljana Bežigrad,2024-12-03,2.9
+_1895,Ljubljana Bežigrad,2024-12-04,4.4
+_1895,Ljubljana Bežigrad,2024-12-05,1.9
+_1895,Ljubljana Bežigrad,2024-12-06,0.9
+_1895,Ljubljana Bežigrad,2024-12-07,0.8
+_1895,Ljubljana Bežigrad,2024-12-08,3
+_1895,Ljubljana Bežigrad,2024-12-09,3.3
+_1895,Ljubljana Bežigrad,2024-12-10,3.3
+_1895,Ljubljana Bežigrad,2024-12-11,3.1
+_1895,Ljubljana Bežigrad,2024-12-12,3
+_1895,Ljubljana Bežigrad,2024-12-13,1.7
+_1895,Ljubljana Bežigrad,2024-12-14,0.9
+_1895,Ljubljana Bežigrad,2024-12-15,-0.1
+_1895,Ljubljana Bežigrad,2024-12-16,2.3
+_1895,Ljubljana Bežigrad,2024-12-17,3.2
+_1895,Ljubljana Bežigrad,2024-12-18,4.5
+_1895,Ljubljana Bežigrad,2024-12-19,6.6
+_1895,Ljubljana Bežigrad,2024-12-20,4.6
+_1895,Ljubljana Bežigrad,2024-12-21,0.4
+_1895,Ljubljana Bežigrad,2024-12-22,0.2
+_1895,Ljubljana Bežigrad,2024-12-23,1.4
+_1895,Ljubljana Bežigrad,2024-12-24,3.5
+_1895,Ljubljana Bežigrad,2024-12-25,2.5
+_1895,Ljubljana Bežigrad,2024-12-26,-0.8
+_1895,Ljubljana Bežigrad,2024-12-27,-0.8
+_1895,Ljubljana Bežigrad,2024-12-28,-0.5
+_1895,Ljubljana Bežigrad,2024-12-29,-0.4
+_1895,Ljubljana Bežigrad,2024-12-30,-0.4
+_1895,Ljubljana Bežigrad,2024-12-31,-0.4
+_1895,Ljubljana Bežigrad,2025-01-01,3.7
