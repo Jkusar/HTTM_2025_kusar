@@ -9,7 +9,6 @@ Created on Sat May 24 00:47:01 2025
 #importing paths for lybraries
 import sys
 sys.path.append("C:/Users/Jernej Kusar/Documents/LFDT splošno/Dodiplomska/Main")
-sys.path.append("C:/Users/Jernej Kusar/Documents/LFDT splošno/Dodiplomska/Enacbe")
 
 
 #common libraries
@@ -17,6 +16,7 @@ import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 1000
 import numpy as np
 
+np.__version__
 
 #custom libraries
 import datalib as jdl
@@ -50,7 +50,7 @@ color_palett = {"day" : "red"}
 symbol_palett = {"day" : "."}
 
 
-#plot zeta plot
+
 jpl.plot_xy_data(nozzles=names, values_x=day, values_y=temp, 
                  x_label=r"Dan", y_label=r"Zunanja temperatura [°C]", title="", 
                  figure_size = (13.8599/2.54, 11.0091/2.54),
@@ -65,7 +65,6 @@ jpl.plot_xy_data(nozzles=names, values_x=day, values_y=temp,
                  plot_font = "Palatino Linotype")
 
 
-
 #Splošni podatki
 T_i_pr = 22 #°C
 T_i = 22 #°C
@@ -77,6 +76,8 @@ izkoristek = 0.75
 T_out_pr = -13 #°C
 P_v = 50 * 10**-3 #kW
 p_okolice = 101325 #Pa
+UA = 213 #W/K
+
 
 #Pregretja
 D_t_kond = 5 #K
@@ -93,8 +94,7 @@ izkoristek_črpalke = 0.6 #/
 D_cevi = 25 * 10**-3 #m
 epsilon = 5 * 10**-5 #/
 L_cevi = 20 #m
-f_D = 0.024336 #https://www.omnicalculator.com/physics/friction-factor
-#Re = 76288.1, k = 0.00125 mm, D = 25 mm
+f_D = 0.024336 #https://www.omnicalculator.com/physics/friction-factor #Re = 76288.1, k = 0.00125 mm, D = 25 mm
 g = 9.81 #m/s^2
 
 
@@ -213,7 +213,6 @@ for i in range(len(temp)):
 
 #Potrebna toplotna moč
 
-UA = 213 #W/K
 
 def izgube(UA, T_zunaj, T_notranja):
     Q = UA * (T_notranja - T_zunaj)
