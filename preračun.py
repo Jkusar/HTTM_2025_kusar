@@ -15,6 +15,9 @@ sys.path.append("C:/Users/Jernej Kusar/Documents/LFDT splošno/Dodiplomska/Main"
 import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 1000
 import numpy as np
+from CoolProp.CoolProp import PropsSI
+from pyfluids import Fluid, FluidsList
+
 
 np.__version__
 
@@ -54,7 +57,7 @@ symbol_palett = {"day" : "."}
 jpl.plot_xy_data(nozzles=names, values_x=day, values_y=temp, 
                  x_label=r"Dan", y_label=r"Zunanja temperatura [°C]", title="", 
                  figure_size = (13.8599/2.54, 11.0091/2.54),
-                 scale="linear", marker_size = 50, 
+                 scale="linear", marker_size = 50,
                  show_grid = True, connect_line_color = {"day" : "red"},
                  point_opacity = 1, connect_points = ["day"], connect_line_width = 1,
                  minor_ticks=True, color_palett = color_palett, symbol_palett = symbol_palett, 
@@ -77,6 +80,7 @@ T_out_pr = -13 #°C
 P_v = 50 * 10**-3 #kW
 p_okolice = 101325 #Pa
 UA = 213 #W/K
+T_omejitev = 12 #°C
 
 
 #Pregretja
@@ -97,12 +101,12 @@ L_cevi = 20 #m
 f_D = 0.024336 #https://www.omnicalculator.com/physics/friction-factor #Re = 76288.1, k = 0.00125 mm, D = 25 mm
 g = 9.81 #m/s^2
 
+#Izris grafov
+krivulja_dan = 50
+
 
 
 #Potrebna temperatura na vstopu v ogrevalni sistem
-
-
-T_omejitev = 12 #°C
 
 def temp_ogr_vst(T_i_pr, T_i, T_ogr_vst_pr, T_ogr_izt_pr, T_e_pr, T_e, m):
     a = (T_ogr_vst_pr - T_ogr_izt_pr)/2
@@ -126,7 +130,7 @@ for i in list(temp.keys()):
 mejna_temp = temp_ogr_vst(T_i_pr, T_i, T_ogr_vst_pr, T_ogr_izt_pr, T_e_pr, T_omejitev, m)
 
 jpl.plot_xy_data(nozzles=names, values_x=day, values_y=vstopna_temp, 
-                 x_label=r"Dan", y_label=r"Temperatura na vstopu v ogrevalni sisstem [°C]", title="", 
+                 x_label=r"Dan", y_label=r"Temperatura na vstopu v ogrevalni sistem [°C]", title="", 
                  figure_size = (13.8599/2.54, 11.0091/2.54),
                  scale="linear", marker_size = 50, 
                  show_grid = True, connect_line_color = {"day" : "red"},
@@ -148,7 +152,7 @@ temp_uparjalnika_voda = T_podtalnice + D_t_uparjanje_voda
 temp_kondenzatorja = np.real(np.array(list(vstopna_temp.values()))) + D_t_ogrevanje
 
 #izračun tlakov
-from pyfluids import Fluid, FluidsList
+
 uparjalnik_tlak_zrak = []
 kondenzator_tlak = []
 for i in range(len(temp)):
@@ -164,6 +168,41 @@ for i in range(len(temp)):
     
 uparjalnik_v = Fluid(FluidsList.R290).bubble_point_at_temperature(temp_uparjalnika_voda)
 uparjalnik_tlak_voda = uparjalnik_v.pressure
+
+
+#Izri krivulje entalpija-tlak
+
+range_tlak = np.linspace(0.5, 100, 1000) #bar (več kot 0)
+
+krivulja_tlak_1 = {}
+krivulja_tlak_2 = {}
+
+krivulja_entalpija_levo = {}
+krivulja_entalpija_desno = {}
+j = 0
+for i in range_tlak:
+    try:
+        levo = Fluid(FluidsList.R290).dew_point_at_pressure(i*10**5).enthalpy * 10**-3
+        desno = Fluid(FluidsList.R290).bubble_point_at_pressure(i*10**5).enthalpy * 10**-3
+        j+=1
+        krivulja_tlak_1.update({f"R290-{j}" : i})
+        krivulja_tlak_2.update({f"R290_1-{j+len(range_tlak)}" : i})
+        krivulja_entalpija_levo.update({f"R290-{j}" : levo})
+        krivulja_entalpija_desno.update({f"R290_1-{j+len(range_tlak)}" : desno})
+    except Exception as e:
+        print(f"Tlak vrha: {i}")
+        print(f"Exception: {e}")
+        break
+
+krivulja_entalpija = krivulja_entalpija_levo | krivulja_entalpija_desno
+krivulja_tlak = krivulja_tlak_1 | krivulja_tlak_2
+
+
+krivulja = ["R290", "R290_1"]
+kc_pal = {"R290": "green", "R290_1" : "green"}
+ks_pal = {"R290": ".", "R290_1" : "."}
+
+
 
 #Izračun, katere dneve ogrevamo
 ogrevani_dnevi = []
@@ -185,7 +224,6 @@ def h_2_real(P_up, P_kond, T_up, ni):
     
     return h2_real
 
-from CoolProp.CoolProp import PropsSI
 
 h_zrak = {}
 
@@ -208,8 +246,48 @@ for i in range(len(temp)):
     
     dan = f"day-{i+1}"
     h_voda.update({dan : [h1, h2_real, h3, h4]})
+    
+
+#Izris grafa
+
+temp[f"day-{krivulja_dan}"]
+
+k_x_z = h_zrak[f"day-{krivulja_dan}"]
+k_y_z = [uparjalnik_tlak_zrak[list(temp.values()).index(temp[f"day-{krivulja_dan}"])]*10**-5, kondenzator_tlak[list(temp.values()).index(temp[f"day-{krivulja_dan}"])]*10**-5]
+
+c_p_z = [[(k_x_z[-1], k_x_z[0]), (k_y_z[0], k_y_z[0])], [(k_x_z[0], k_x_z[1]), (k_y_z[0], k_y_z[1])], [(k_x_z[1], k_x_z[2]), (k_y_z[1], k_y_z[1])], [(k_x_z[2], k_x_z[-1]), (k_y_z[1], k_y_z[0])]]
+
+jpl.plot_xy_data(nozzles=krivulja, values_y=krivulja_tlak, values_x=krivulja_entalpija, 
+                 y_label=r"Tlak [bar]", x_label=r"Entalpija [kJ/kg]", title=f"Krivulja zrak-zrak za dan: {krivulja_dan}", 
+                 figure_size = (13.8599/2.54, 11.0091/2.54),
+                 marker_size = 50, scale_y = "log", connect_points_sort = "y",
+                 show_grid = True, connect_line_color = {"R290": "green", "R290_1":"green"},
+                 point_opacity = 0, connect_points = ["R290", "R290_1"], connect_line_width = 1,
+                 minor_ticks=True, color_palett = kc_pal, symbol_palett = ks_pal, 
+                 legend_fontsize=9, legend_location="upper left", legend_param=(0,1),
+                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = True,
+                 curve_points = c_p_z, curve_color = "violet", curve_width = 1, curve_style="-",
+                 axis_fontsize=9, axis_scalar_format=False, show_legend=False, legend_marker_size = 9,
+                 title_fontsize = 9, plot_font = "Palatino Linotype")
+
+k_x = h_voda[f"day-{krivulja_dan}"]
+k_y = [uparjalnik_tlak_voda*10**-5, kondenzator_tlak[list(temp.values()).index(temp[f"day-{krivulja_dan}"])]*10**-5]
+
+c_p_v = [[(k_x[-1], k_x[0]), (k_y[0], k_y[0])], [(k_x[0], k_x[1]), (k_y[0], k_y[1])], [(k_x[1], k_x[2]), (k_y[1], k_y[1])], [(k_x[2], k_x[-1]), (k_y[1], k_y[0])]]
 
 
+jpl.plot_xy_data(nozzles=krivulja, values_y=krivulja_tlak, values_x=krivulja_entalpija, 
+                 y_label=r"Tlak [bar]", x_label=r"Entalpija [kJ/kg]", title=f"Krivulja voda-zrak za dan: {krivulja_dan}", 
+                 figure_size = (13.8599/2.54, 11.0091/2.54),
+                 marker_size = 50, scale_y = "log", connect_points_sort = "y",
+                 show_grid = True, connect_line_color = {"R290": "green", "R290_1":"green"},
+                 point_opacity = 0, connect_points = ["R290", "R290_1"], connect_line_width = 1,
+                 minor_ticks=True, color_palett = kc_pal, symbol_palett = ks_pal, 
+                 legend_fontsize=9, legend_location="upper left", legend_param=(0,1),
+                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = True,
+                 curve_points = c_p_v, curve_color = "violet", curve_width = 1, curve_style="-",
+                 axis_fontsize=9, axis_scalar_format=False, show_legend=False, legend_marker_size = 9,
+                 title_fontsize = 9, plot_font = "Palatino Linotype")
 
 #Potrebna toplotna moč
 
@@ -225,42 +303,24 @@ for key, val in temp.items():
     potrebno_ogrevanje.update({key: q})
 
 
-#Masni pretok R290 glede na projektne pogoje
+#Masni pretok R290 glede na zunanje pogoje
 
-
-Q_izgube_pr = izgube(UA, T_out_pr, T_i_pr)
-
-
-temp_uparjalnika_pr_zrak = T_out_pr + D_t_uparjanje_zrak
-temp_uparjalnika_pr_voda = T_out_pr + D_t_uparjanje_voda
-
-temp_kondenzatorja_pr = T_ogr_vst_pr + D_t_ogrevanje
-
-
-kondenzator_pr = Fluid(FluidsList.R290).dew_point_at_temperature(temp_kondenzatorja_pr)
-uparjalnik_pr_zrak = Fluid(FluidsList.R290).bubble_point_at_temperature(temp_uparjalnika_pr_zrak)
-uparjalnik_pr_voda = Fluid(FluidsList.R290).bubble_point_at_temperature(temp_uparjalnika_pr_voda)
-
-p_k_pr = kondenzator_pr.pressure
-p_u_pr_zrak = uparjalnik_pr_zrak.pressure
-p_u_pr_voda = uparjalnik_pr_voda.pressure
-
-
-h1_pr_z = PropsSI("H", "P", p_u_pr_zrak, "T", temp_uparjalnika_pr_zrak + D_t_up + 273, "R290") * 10**-3
-h1_pr_v = PropsSI("H", "P", p_u_pr_voda, "T", temp_uparjalnika_pr_voda + D_t_up + 273, "R290") * 10**-3
-
-h2_pr_z = h_2_real(p_u_pr_zrak, p_k_pr, temp_uparjalnika_pr_zrak + D_t_up + 273, izkoristek)
-h2_pr_v = h_2_real(p_u_pr_voda, p_k_pr, temp_uparjalnika_pr_voda + D_t_up + 273, izkoristek)
-
-h3_pr = PropsSI("H", "P", p_k_pr, "T", temp_kondenzatorja_pr - D_t_kond + 273, "R290") * 10**-3
-h4_pr = h3_pr
-
-
-masni_pretok_R290_zrak = - Q_izgube_pr/((h3_pr - h2_pr_z)*10**3)
-masni_pretok_R290_voda = - Q_izgube_pr/((h3_pr - h2_pr_v)*10**3)
-
+masni_pretok_voda = {}
+masni_pretok_zrak = {}
+for i in temp.keys():
+    Q_izgube= izgube(UA, temp[i], T_i)
+    
+    h_v_2, h_v_3 = h_voda[i][1], h_voda[i][2]
+    h_z_2, h_z_3 = h_zrak[i][1], h_zrak[i][2]
+    
+    mf_zrak = - Q_izgube/((h_z_3 - h_z_2)*10**3)
+    mf_voda = - Q_izgube/((h_v_3 - h_v_2)*10**3)
+    
+    masni_pretok_voda.update({i: mf_voda})
+    masni_pretok_zrak.update({i : mf_zrak})
+    
+    
 #COP zrak
-
 
 Q_up_zrak = {}
 Q_kond_zrak = {}
@@ -269,9 +329,9 @@ COP_zrak = {}
 dnevi = {}
 j = 0
 for i in list(temp.keys()):
-    Q_up = masni_pretok_R290_zrak * (h_zrak[i][0] - h_zrak[i][-1])
-    Q_kond = - masni_pretok_R290_zrak * (h_zrak[i][2] - h_zrak[i][1])
-    P_komp = masni_pretok_R290_zrak * (h_zrak[i][1] - h_zrak[i][0])
+    Q_up = masni_pretok_zrak[i] * (h_zrak[i][0] - h_zrak[i][-1])
+    Q_kond = - masni_pretok_zrak[i] * (h_zrak[i][2] - h_zrak[i][1])
+    P_komp = masni_pretok_zrak[i] * (h_zrak[i][1] - h_zrak[i][0])
     
     COP = Q_kond / (P_komp + P_v)
     j+=1
@@ -320,7 +380,7 @@ jpl.plot_xy_data(nozzles=denotions, values_x=dnevi, values_y = Q_kond_zrak,
                  point_opacity = 1, connect_points = None, connect_line_width = 1,
                  minor_ticks=True, color_palett = c_pal, symbol_palett = s_pal, 
                  legend_fontsize=9, legend_location="upper left", legend_param=(0,1),
-                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = True,
+                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = False,
                  curve_points = [[[1, 365], [7.4, 7.4]]], curve_color = "black", curve_width = 2,
                  axis_fontsize=9, axis_scalar_format=False, show_legend=False, legend_marker_size = 100,
                  plot_font = "Palatino Linotype")
@@ -334,7 +394,7 @@ jpl.plot_xy_data(nozzles=denotions, values_x=dnevi, values_y=Q_up_zrak,
                  point_opacity = 1, connect_points = None, connect_line_width = 1,
                  minor_ticks=True, color_palett = c_pal, symbol_palett = s_pal, 
                  legend_fontsize=9, legend_location="upper left", legend_param=(0,1),
-                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = True,
+                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = False,
                  curve_points = [[[1, 365], [6.4, 6.4]]], curve_color = "black", curve_width = 2,
                  axis_fontsize=9, axis_scalar_format=False, show_legend=False, legend_marker_size = 100,
                  plot_font = "Palatino Linotype")
@@ -348,7 +408,7 @@ jpl.plot_xy_data(nozzles=denotions, values_x=dnevi, values_y=P_komp_zrak,
                  point_opacity = 1, connect_points = None, connect_line_width = 1,
                  minor_ticks=True, color_palett = c_pal, symbol_palett = s_pal, 
                  legend_fontsize=9, legend_location="upper left", legend_param=(0,1),
-                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = True,
+                 x_tick_axis_spacing = 1, y_tick_axis_spacing = 1, plot_curve = False,
                  curve_points = [[[1, 365], [1, 1]]], curve_color = "black", curve_width = 2,
                  axis_fontsize=9, axis_scalar_format=False, show_legend=False, legend_marker_size = 100,
                  plot_font = "Palatino Linotype")
@@ -377,9 +437,9 @@ COP_voda = {}
 dnevi = {}
 j = 0
 for i in list(temp.keys()):
-    Q_up = masni_pretok_R290_voda * (h_voda[i][0] - h_voda[i][-1])
-    Q_kond = - masni_pretok_R290_voda * (h_voda[i][2] - h_voda[i][1])
-    P_komp = masni_pretok_R290_voda * (h_voda[i][1] - h_voda[i][0])
+    Q_up = masni_pretok_voda[i] * (h_voda[i][0] - h_voda[i][-1])
+    Q_kond = - masni_pretok_voda[i] * (h_voda[i][2] - h_voda[i][1])
+    P_komp = masni_pretok_voda[i] * (h_voda[i][1] - h_voda[i][0])
     
     
     mf = - Q_up/(h_v_2 - h_v_1)
