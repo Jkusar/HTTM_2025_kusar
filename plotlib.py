@@ -700,6 +700,7 @@ def plot_xy_data(nozzles, values_x, values_y, x_label, y_label, title, **kwargs)
             - colorbar_range [list, optional] - option to artificially set colorbar range. By default it is set by colorbar dictionary ranges.
             - color_palett [dict, optional] - dictionary in which colors are defined to certain nozzles
             - connect_points [list, optional] - Option to connect points whose keys share a certain string.
+            - connect_points_sort [str, optional] - Option to sort connect points by x and y values. Type "x" or "y" for the order of sorting.
             - connecting_lines_label [bool, optional] - option to display labels of lines connecting points. Labels are keys fo each line
             - connect_line_width [int, optional] - width of the connecting line
             - connect_line_color [dict, optional] - option to specify colors of connecting lines. Keys of the dict are connect line keys, values are colors.
@@ -756,6 +757,8 @@ def plot_xy_data(nozzles, values_x, values_y, x_label, y_label, title, **kwargs)
     marker_size = kwargs.get("marker_size", 30)
     legend_marker_size = kwargs.get("legend_marker_size", marker_size)
     scale = kwargs.get("scale", "linear")
+    scale_x = kwargs.get("scale_x", scale)
+    scale_y = kwargs.get("scale_y", scale)
     iterations_split = kwargs.get("iterations_split", "_")
     nozzles_split = kwargs.get("nozzles_split", ".")
     xlim = kwargs.get("x_lim", None)
@@ -802,19 +805,22 @@ def plot_xy_data(nozzles, values_x, values_y, x_label, y_label, title, **kwargs)
     connect_label = kwargs.get("connecting_lines_label", False)
     connect_line_width = kwargs.get("connect_line_width", 1)
     connect_line_color = kwargs.get("connect_line_color", None)
+    connect_points_sort = kwargs.get("connect_points_sort", "x")
     tick_fontsize = kwargs.get("tick_fontsize", legend_fontsize)
     x_tick_axis_spacing = kwargs.get("x_tick_axis_spacing", 10)
     y_tick_axis_spacing = kwargs.get("y_tick_axis_spacing", 10)
     colorbar = kwargs.get("colorbar", None)
     colorbar_range = kwargs.get("colorbar_range", None)
     cbar_label = kwargs.get("colorbar_label", "Colorbar")
-    
+
     #seting the font
     plt.rcParams["font.family"] = plot_font
     #plt.rcParams["mathtext.fontset"] = "cm"
     plt.rcParams['text.usetex'] = True
     plt.rcParams["text.latex.preamble"] = r"\usepackage{mathpazo}"  # Palatino font
 
+
+                
 
     #creating a figure
     if plot_seperate:
@@ -941,8 +947,14 @@ def plot_xy_data(nozzles, values_x, values_y, x_label, y_label, title, **kwargs)
                             c_ypoints[c_point].extend([y])
         if connect_points is not None:
             #sorting x and y points to connect so that lines are not jumbled
-            c_xpoints, index_change = jdl.sort_dict_values_by_elements(input_dict=c_xpoints)
-            c_ypoints = jdl.sort_dict_values_by_elements(input_dict=c_ypoints, sort_by_index=index_change)
+            if connect_points_sort is not None:
+                if connect_points_sort == "x":
+                    c_xpoints, index_change = jdl.sort_dict_values_by_elements(input_dict=c_xpoints)
+                    c_ypoints = jdl.sort_dict_values_by_elements(input_dict=c_ypoints, sort_by_index=index_change)
+                else:
+                    c_ypoints, index_change = jdl.sort_dict_values_by_elements(input_dict=c_ypoints)
+                    c_xpoints = jdl.sort_dict_values_by_elements(input_dict=c_xpoints, sort_by_index=index_change)
+                    
             #sort labels by size
             num_val = []
             for p in all_c_points:
@@ -1022,8 +1034,8 @@ def plot_xy_data(nozzles, values_x, values_y, x_label, y_label, title, **kwargs)
 
     #Plot axis parameters
     
-    plt.yscale(scale)
-    plt.xscale(scale)
+    plt.yscale(scale_y)
+    plt.xscale(scale_x)
     ax = plt.gca()
     if axis_scalar_format:
         # Create a ScalarFormatter
